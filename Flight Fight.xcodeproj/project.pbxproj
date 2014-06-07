@@ -12,6 +12,28 @@
 		0B4592041940B2C70058A27A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B4592021940B2C70058A27A /* Main.storyboard */; };
 		0B4592061940B2C70058A27A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B4592051940B2C70058A27A /* Images.xcassets */; };
 		0B4592121940B2C70058A27A /* Flight_FightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4592111940B2C70058A27A /* Flight_FightTests.swift */; };
+		0BD2038A1941A4580063EE4A /* bullet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BD2036419417D8A0063EE4A /* bullet.mp3 */; };
+		0BD2038B1941A4580063EE4A /* BurstAircraftPause-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BD2036519417D8A0063EE4A /* BurstAircraftPause-hd.png */; };
+		0BD2038C1941A4580063EE4A /* BurstAircraftPause.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BD2036619417D8A0063EE4A /* BurstAircraftPause.png */; };
+		0BD2038D1941A4580063EE4A /* enemy1_down.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BD2036719417D8A0063EE4A /* enemy1_down.mp3 */; };
+		0BD2038E1941A4580063EE4A /* enemy2_down.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BD2036819417D8A0063EE4A /* enemy2_down.mp3 */; };
+		0BD2038F1941A4580063EE4A /* enemy2_out.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BD2036919417D8A0063EE4A /* enemy2_out.mp3 */; };
+		0BD203901941A4580063EE4A /* enemy3_down.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BD2036A19417D8A0063EE4A /* enemy3_down.mp3 */; };
+		0BD203911941A4580063EE4A /* Fav_Cell_Progress_Bkg.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BD2036B19417D8A0063EE4A /* Fav_Cell_Progress_Bkg.png */; };
+		0BD203921941A4580063EE4A /* Fav_Voice_Pause-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BD2036C19417D8A0063EE4A /* Fav_Voice_Pause-hd.png */; };
+		0BD203931941A4580063EE4A /* Fav_Voice_Pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BD2036D19417D8A0063EE4A /* Fav_Voice_Pause.png */; };
+		0BD203941941A4580063EE4A /* Fav_Voice_Play-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BD2036E19417D8A0063EE4A /* Fav_Voice_Play-hd.png */; };
+		0BD203951941A4580063EE4A /* Fav_Voice_Play.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BD2036F19417D8A0063EE4A /* Fav_Voice_Play.png */; };
+		0BD203961941A4580063EE4A /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BD2037019417D8A0063EE4A /* fps_images.png */; };
+		0BD203971941A4580063EE4A /* game_music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BD2037119417D8A0063EE4A /* game_music.mp3 */; };
+		0BD203981941A4580063EE4A /* game_over.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BD2037219417D8A0063EE4A /* game_over.mp3 */; };
+		0BD203991941A4580063EE4A /* gameArts-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BD2037319417D8A0063EE4A /* gameArts-hd.plist */; };
+		0BD2039A1941A4580063EE4A /* gameArts-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BD2037419417D8A0063EE4A /* gameArts-hd.png */; };
+		0BD2039B1941A4580063EE4A /* gameArts.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BD2037519417D8A0063EE4A /* gameArts.plist */; };
+		0BD2039C1941A4580063EE4A /* gameArts.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BD2037619417D8A0063EE4A /* gameArts.png */; };
+		0BD2039E1941C5E00063EE4A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BD2039D1941C5E00063EE4A /* QuartzCore.framework */; };
+		0BEA693C19430EED00220526 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEA693B19430EED00220526 /* Flight.swift */; };
+		0BEA693E19436E4F00220526 /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEA693D19436E4F00220526 /* Bullet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +56,29 @@
 		0B45920B1940B2C70058A27A /* Flight FightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Flight FightTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B4592101940B2C70058A27A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B4592111940B2C70058A27A /* Flight_FightTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flight_FightTests.swift; sourceTree = "<group>"; };
+		0B45921B1940B4670058A27A /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		0BD2036419417D8A0063EE4A /* bullet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bullet.mp3; sourceTree = "<group>"; };
+		0BD2036519417D8A0063EE4A /* BurstAircraftPause-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BurstAircraftPause-hd.png"; sourceTree = "<group>"; };
+		0BD2036619417D8A0063EE4A /* BurstAircraftPause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BurstAircraftPause.png; sourceTree = "<group>"; };
+		0BD2036719417D8A0063EE4A /* enemy1_down.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = enemy1_down.mp3; sourceTree = "<group>"; };
+		0BD2036819417D8A0063EE4A /* enemy2_down.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = enemy2_down.mp3; sourceTree = "<group>"; };
+		0BD2036919417D8A0063EE4A /* enemy2_out.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = enemy2_out.mp3; sourceTree = "<group>"; };
+		0BD2036A19417D8A0063EE4A /* enemy3_down.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = enemy3_down.mp3; sourceTree = "<group>"; };
+		0BD2036B19417D8A0063EE4A /* Fav_Cell_Progress_Bkg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fav_Cell_Progress_Bkg.png; sourceTree = "<group>"; };
+		0BD2036C19417D8A0063EE4A /* Fav_Voice_Pause-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fav_Voice_Pause-hd.png"; sourceTree = "<group>"; };
+		0BD2036D19417D8A0063EE4A /* Fav_Voice_Pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fav_Voice_Pause.png; sourceTree = "<group>"; };
+		0BD2036E19417D8A0063EE4A /* Fav_Voice_Play-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fav_Voice_Play-hd.png"; sourceTree = "<group>"; };
+		0BD2036F19417D8A0063EE4A /* Fav_Voice_Play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fav_Voice_Play.png; sourceTree = "<group>"; };
+		0BD2037019417D8A0063EE4A /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fps_images.png; sourceTree = "<group>"; };
+		0BD2037119417D8A0063EE4A /* game_music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = game_music.mp3; sourceTree = "<group>"; };
+		0BD2037219417D8A0063EE4A /* game_over.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = game_over.mp3; sourceTree = "<group>"; };
+		0BD2037319417D8A0063EE4A /* gameArts-hd.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "gameArts-hd.plist"; sourceTree = "<group>"; };
+		0BD2037419417D8A0063EE4A /* gameArts-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gameArts-hd.png"; sourceTree = "<group>"; };
+		0BD2037519417D8A0063EE4A /* gameArts.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = gameArts.plist; sourceTree = "<group>"; };
+		0BD2037619417D8A0063EE4A /* gameArts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameArts.png; sourceTree = "<group>"; };
+		0BD2039D1941C5E00063EE4A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0BEA693B19430EED00220526 /* Flight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Flight.swift; path = ../Flight.swift; sourceTree = "<group>"; };
+		0BEA693D19436E4F00220526 /* Bullet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bullet.swift; path = ../Bullet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BD2039E1941C5E00063EE4A /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,9 +121,12 @@
 		0B4591FB1940B2C70058A27A /* Flight Fight */ = {
 			isa = PBXGroup;
 			children = (
-				0B4591FE1940B2C70058A27A /* AppDelegate.swift */,
 				0B4592001940B2C70058A27A /* ViewController.swift */,
+				0BEA693B19430EED00220526 /* Flight.swift */,
+				0BEA693D19436E4F00220526 /* Bullet.swift */,
+				0B45921B1940B4670058A27A /* MyPlayground.playground */,
 				0B4592021940B2C70058A27A /* Main.storyboard */,
+				0B4591FE1940B2C70058A27A /* AppDelegate.swift */,
 				0B4592051940B2C70058A27A /* Images.xcassets */,
 				0B4591FC1940B2C70058A27A /* Supporting Files */,
 			);
@@ -95,6 +144,7 @@
 		0B45920E1940B2C70058A27A /* Flight FightTests */ = {
 			isa = PBXGroup;
 			children = (
+				0BD2039D1941C5E00063EE4A /* QuartzCore.framework */,
 				0B4592111940B2C70058A27A /* Flight_FightTests.swift */,
 				0B45920F1940B2C70058A27A /* Supporting Files */,
 			);
@@ -104,6 +154,25 @@
 		0B45920F1940B2C70058A27A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0BD2036419417D8A0063EE4A /* bullet.mp3 */,
+				0BD2036519417D8A0063EE4A /* BurstAircraftPause-hd.png */,
+				0BD2036619417D8A0063EE4A /* BurstAircraftPause.png */,
+				0BD2036719417D8A0063EE4A /* enemy1_down.mp3 */,
+				0BD2036819417D8A0063EE4A /* enemy2_down.mp3 */,
+				0BD2036919417D8A0063EE4A /* enemy2_out.mp3 */,
+				0BD2036A19417D8A0063EE4A /* enemy3_down.mp3 */,
+				0BD2036B19417D8A0063EE4A /* Fav_Cell_Progress_Bkg.png */,
+				0BD2036C19417D8A0063EE4A /* Fav_Voice_Pause-hd.png */,
+				0BD2036D19417D8A0063EE4A /* Fav_Voice_Pause.png */,
+				0BD2036E19417D8A0063EE4A /* Fav_Voice_Play-hd.png */,
+				0BD2036F19417D8A0063EE4A /* Fav_Voice_Play.png */,
+				0BD2037019417D8A0063EE4A /* fps_images.png */,
+				0BD2037119417D8A0063EE4A /* game_music.mp3 */,
+				0BD2037219417D8A0063EE4A /* game_over.mp3 */,
+				0BD2037319417D8A0063EE4A /* gameArts-hd.plist */,
+				0BD2037419417D8A0063EE4A /* gameArts-hd.png */,
+				0BD2037519417D8A0063EE4A /* gameArts.plist */,
+				0BD2037619417D8A0063EE4A /* gameArts.png */,
 				0B4592101940B2C70058A27A /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -190,7 +259,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B4592041940B2C70058A27A /* Main.storyboard in Resources */,
+				0BD203941941A4580063EE4A /* Fav_Voice_Play-hd.png in Resources */,
+				0BD2039C1941A4580063EE4A /* gameArts.png in Resources */,
+				0BD2038D1941A4580063EE4A /* enemy1_down.mp3 in Resources */,
+				0BD203901941A4580063EE4A /* enemy3_down.mp3 in Resources */,
+				0BD2038A1941A4580063EE4A /* bullet.mp3 in Resources */,
+				0BD2038F1941A4580063EE4A /* enemy2_out.mp3 in Resources */,
+				0BD203971941A4580063EE4A /* game_music.mp3 in Resources */,
 				0B4592061940B2C70058A27A /* Images.xcassets in Resources */,
+				0BD2039A1941A4580063EE4A /* gameArts-hd.png in Resources */,
+				0BD2038B1941A4580063EE4A /* BurstAircraftPause-hd.png in Resources */,
+				0BD203911941A4580063EE4A /* Fav_Cell_Progress_Bkg.png in Resources */,
+				0BD203921941A4580063EE4A /* Fav_Voice_Pause-hd.png in Resources */,
+				0BD2039B1941A4580063EE4A /* gameArts.plist in Resources */,
+				0BD203931941A4580063EE4A /* Fav_Voice_Pause.png in Resources */,
+				0BD2038C1941A4580063EE4A /* BurstAircraftPause.png in Resources */,
+				0BD203951941A4580063EE4A /* Fav_Voice_Play.png in Resources */,
+				0BD203991941A4580063EE4A /* gameArts-hd.plist in Resources */,
+				0BD203981941A4580063EE4A /* game_over.mp3 in Resources */,
+				0BD2038E1941A4580063EE4A /* enemy2_down.mp3 in Resources */,
+				0BD203961941A4580063EE4A /* fps_images.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,8 +296,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BEA693C19430EED00220526 /* Flight.swift in Sources */,
 				0B4592011940B2C70058A27A /* ViewController.swift in Sources */,
 				0B4591FF1940B2C70058A27A /* AppDelegate.swift in Sources */,
+				0BEA693E19436E4F00220526 /* Bullet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +487,7 @@
 				0B4592171940B2C70058A27A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0B4592181940B2C70058A27A /* Build configuration list for PBXNativeTarget "Flight FightTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +496,7 @@
 				0B45921A1940B2C70058A27A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
