@@ -8,6 +8,7 @@
 
 import UIKit
 import QuartzCore
+import AVFoundation
 
 
 var labelTitle:UILabel!;
@@ -15,6 +16,8 @@ var labelStart:UILabel!;
 var flight:Flight!;
 var tapToStart:UITapGestureRecognizer!;
 var fireTimer:NSTimer!;
+var avplayer:AVAudioPlayer!;
+var player:AVAudioPlayer!;
 
 class ViewController: UIViewController {
     
@@ -51,24 +54,21 @@ class ViewController: UIViewController {
             });
 
         
-        labelTitle=UILabel(frame:CGRectMake(0,0,120,50));
-        labelTitle.center=CGPointMake(self.view.center.x, self.view.center.y-50);
+        labelTitle=UILabel(frame:CGRectMake(0,0,180,50));
+        labelTitle.center=CGPointMake(self.view.center.x+10, self.view.center.y-150);
         labelTitle.text="Flight Fight";
-        labelTitle.font=UIFont.systemFontOfSize(22);
-        labelTitle.textColor=UIColor.blueColor();
+        labelTitle.font=UIFont.systemFontOfSize(30);
+        labelTitle.textColor=UIColor.grayColor();
         self.view.addSubview(labelTitle);
         
         
         labelStart=UILabel(frame:CGRectMake(labelTitle.frame.size.width+25,300,90,50))
         
-        labelStart.center=CGPointMake(self.view.center.x, labelStart.center.y);
+        labelStart.center=CGPointMake(self.view.center.x, labelStart.center.y+90);
         labelStart.text="Tap to start!";
         labelStart.font=UIFont.systemFontOfSize(15);
         labelStart.textColor=UIColor.redColor();
         self.view.addSubview(labelStart);
-        
-        
-        
         
         tapToStart=UITapGestureRecognizer(target: self , action: "start:");
         self.view.addGestureRecognizer(tapToStart!);
@@ -101,13 +101,18 @@ class ViewController: UIViewController {
         
         self.view.removeGestureRecognizer(tapToStart!);
         flight=Flight(frame:CGRectZero);
-        flight!.center=CGPointMake(self.view.center.x, self.view.center.y+100);
+        flight!.center=CGPointMake(self.view.center.x, self.view.center.y+130);
         self.view.addSubview(flight!);
         
         let pan=UIPanGestureRecognizer(target: self , action: "move:")
         flight!.addGestureRecognizer(pan);
         flight!.userInteractionEnabled=true;
         
+        let bgSound = NSURL(fileURLWithPath:NSBundle.mainBundle().pathForResource("game_music",ofType:"mp3"));
+        avplayer=AVAudioPlayer(contentsOfURL :bgSound, error :nil);
+        avplayer.numberOfLoops=NSNotFound;
+        avplayer.prepareToPlay();
+        avplayer.play();
         
     }
     
@@ -128,10 +133,21 @@ class ViewController: UIViewController {
             //endfire
             println("endfire");
             fireTimer.invalidate();
+            
         }
     }
     
     func bullet(){
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0),{
+            let bgSound = NSURL(fileURLWithPath:NSBundle.mainBundle().pathForResource("bullet",ofType:"mp3"));
+            player=AVAudioPlayer(contentsOfURL :bgSound, error :nil);
+            player.prepareToPlay();
+            player.play();
+            }
+            
+        )
+        
         var bullet=Bullet(frame:CGRectZero);
         bullet.center=CGPointMake(flight.center.x, flight.center.y-45);
         self.view.addSubview(bullet);
@@ -140,6 +156,7 @@ class ViewController: UIViewController {
             bullet.center=CGPointMake(bullet.center.x, -10);
             });
     }
+    
     
 }
 

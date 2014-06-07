@@ -34,6 +34,7 @@
 		0BD2039E1941C5E00063EE4A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BD2039D1941C5E00063EE4A /* QuartzCore.framework */; };
 		0BEA693C19430EED00220526 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEA693B19430EED00220526 /* Flight.swift */; };
 		0BEA693E19436E4F00220526 /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEA693D19436E4F00220526 /* Bullet.swift */; };
+		0BEA694019437A3200220526 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BEA693F19437A3200220526 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		0BD2039D1941C5E00063EE4A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		0BEA693B19430EED00220526 /* Flight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Flight.swift; path = ../Flight.swift; sourceTree = "<group>"; };
 		0BEA693D19436E4F00220526 /* Bullet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bullet.swift; path = ../Bullet.swift; sourceTree = "<group>"; };
+		0BEA693F19437A3200220526 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BEA694019437A3200220526 /* AVFoundation.framework in Frameworks */,
 				0BD2039E1941C5E00063EE4A /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,6 +147,7 @@
 		0B45920E1940B2C70058A27A /* Flight FightTests */ = {
 			isa = PBXGroup;
 			children = (
+				0BEA693F19437A3200220526 /* AVFoundation.framework */,
 				0BD2039D1941C5E00063EE4A /* QuartzCore.framework */,
 				0B4592111940B2C70058A27A /* Flight_FightTests.swift */,
 				0B45920F1940B2C70058A27A /* Supporting Files */,
