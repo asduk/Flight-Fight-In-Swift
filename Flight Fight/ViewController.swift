@@ -9,7 +9,7 @@
 import UIKit
 import QuartzCore
 import AVFoundation
-
+import Foundation
 
 var labelTitle:UILabel!;
 var labelStart:UILabel!;
@@ -18,6 +18,10 @@ var tapToStart:UITapGestureRecognizer!;
 var fireTimer:NSTimer!;
 var avplayer:AVAudioPlayer!;
 var player:AVAudioPlayer!;
+var enemyTimer:NSTimer!;
+var timeLine=0;
+
+
 
 class ViewController: UIViewController {
     
@@ -114,7 +118,56 @@ class ViewController: UIViewController {
         avplayer.prepareToPlay();
         avplayer.play();
         
+        enemyTimer=NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "enemy", userInfo: nil, repeats: true);
+        enemyTimer.fire();
+        
+        timeLine=0;
     }
+    func enemy(){
+        timeLine++;
+        var y = arc4random() % 4 + 1;
+        
+        if timeLine%2==0{
+            
+            var enemy1=Enemy(enemyType: EnemyType.enemy_1);
+            enemy1.center=CGPointMake(60*CGFloat(y), -30);
+            self.view.addSubview(enemy1);
+            self.enemyFly(enemy1, type: EnemyType.enemy_1);
+        }else if timeLine%3==0{
+            
+            var enemy2=Enemy(enemyType: EnemyType.enemy_2);
+            enemy2.center=CGPointMake(60*CGFloat(y), -70);
+            self.view.addSubview(enemy2);
+            self.enemyFly(enemy2, type: EnemyType.enemy_2);
+            
+        }
+        if timeLine%6==0{
+            
+        }
+        
+    }
+    
+    func enemyFly(enemy:Enemy,type:EnemyType){
+        
+        if type==EnemyType.enemy_1{
+            
+            UIView.animateWithDuration(4, animations: {
+                UIView.setAnimationCurve(UIViewAnimationCurve.Linear);
+                enemy.center=CGPointMake(enemy.center.x, 600);
+                }, completion: {(finished:Bool) in
+                    enemy.removeFromSuperview();
+                })
+        }else if type==EnemyType.enemy_2{
+            UIView.animateWithDuration(7, animations: {
+                UIView.setAnimationCurve(UIViewAnimationCurve.Linear);
+                enemy.center=CGPointMake(enemy.center.x, 600);
+                }, completion: {(finished:Bool) in
+                    enemy.removeFromSuperview();
+                })
+            
+        }
+    }
+    
     
     func move(sender :UIPanGestureRecognizer!){
         if sender.state==UIGestureRecognizerState.Began{
@@ -152,8 +205,11 @@ class ViewController: UIViewController {
         bullet.center=CGPointMake(flight.center.x, flight.center.y-45);
         self.view.addSubview(bullet);
         UIView.animateWithDuration(1, animations: {
+            
             UIView.setAnimationCurve(UIViewAnimationCurve.Linear);
             bullet.center=CGPointMake(bullet.center.x, -10);
+            }, completion:  {(finished:Bool) in
+                bullet.removeFromSuperview();
             });
     }
     

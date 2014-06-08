@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B0D6A7C1943E7B2001337E1 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0D6A7B1943E7B2001337E1 /* Enemy.swift */; };
 		0B4591FF1940B2C70058A27A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4591FE1940B2C70058A27A /* AppDelegate.swift */; };
 		0B4592011940B2C70058A27A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4592001940B2C70058A27A /* ViewController.swift */; };
 		0B4592041940B2C70058A27A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B4592021940B2C70058A27A /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B0D6A7B1943E7B2001337E1 /* Enemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Enemy.swift; path = ../Enemy.swift; sourceTree = "<group>"; };
 		0B4591F91940B2C70058A27A /* Flight Fight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flight Fight.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B4591FD1940B2C70058A27A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B4591FE1940B2C70058A27A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				0B4592001940B2C70058A27A /* ViewController.swift */,
 				0BEA693B19430EED00220526 /* Flight.swift */,
 				0BEA693D19436E4F00220526 /* Bullet.swift */,
+				0B0D6A7B1943E7B2001337E1 /* Enemy.swift */,
 				0B45921B1940B4670058A27A /* MyPlayground.playground */,
 				0B4592021940B2C70058A27A /* Main.storyboard */,
 				0B4591FE1940B2C70058A27A /* AppDelegate.swift */,
@@ -301,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BEA693C19430EED00220526 /* Flight.swift in Sources */,
+				0B0D6A7C1943E7B2001337E1 /* Enemy.swift in Sources */,
 				0B4592011940B2C70058A27A /* ViewController.swift in Sources */,
 				0B4591FF1940B2C70058A27A /* AppDelegate.swift in Sources */,
 				0BEA693E19436E4F00220526 /* Bullet.swift in Sources */,
