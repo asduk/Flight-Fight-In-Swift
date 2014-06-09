@@ -142,7 +142,10 @@ class ViewController: UIViewController {
             
         }
         if timeLine%6==0{
-            
+            var enemy3=Enemy(enemyType: EnemyType.enemy_3);
+            enemy3.center=CGPointMake(60*CGFloat(y), -70);
+            self.view.addSubview(enemy3);
+            self.enemyFly(enemy3, type: EnemyType.enemy_3);
         }
         
     }
@@ -158,7 +161,15 @@ class ViewController: UIViewController {
                     enemy.removeFromSuperview();
                 })
         }else if type==EnemyType.enemy_2{
-            UIView.animateWithDuration(7, animations: {
+            UIView.animateWithDuration(10, animations: {
+                UIView.setAnimationCurve(UIViewAnimationCurve.Linear);
+                enemy.center=CGPointMake(enemy.center.x, 600);
+                }, completion: {(finished:Bool) in
+                    enemy.removeFromSuperview();
+                })
+            
+        }else if type==EnemyType.enemy_3{
+            UIView.animateWithDuration(5, animations: {
                 UIView.setAnimationCurve(UIViewAnimationCurve.Linear);
                 enemy.center=CGPointMake(enemy.center.x, 600);
                 }, completion: {(finished:Bool) in

@@ -8,6 +8,12 @@
 
 import UIKit
 var enemy:UIImageView!;
+
+func blowUp(){
+    enemy.startAnimating();
+}
+
+
 enum EnemyType: Int {
     case enemy_1,enemy_2,enemy_3
     func enemyDescription() -> String {
@@ -58,12 +64,25 @@ class Enemy: UIView {
             enemy.center=self.center;
             self.addSubview(enemy);
             
+        }else if enemyType==EnemyType.enemy_3{
+            self.frame=CGRectMake(0, 0, 46, 60)
+            let enemy3_fly_1=self.getImageRef(CGRectMake(0, 569,46, 60));
+            let enemy3_blowup_1=self.getImageRef(CGRectMake(432, 538,46, 60));
+            let enemy3_blowup_2=self.getImageRef(CGRectMake(432, 599,46, 60));
+            let enemy3_blowup_3=self.getImageRef(CGRectMake(432, 476,46, 62));
+            let enemy3_blowup_4=self.getImageRef(CGRectMake(0, 628,46, 52));
+            
+            enemy=UIImageView(image:enemy3_fly_1);
+            enemy.animationImages=[enemy3_blowup_1,enemy3_blowup_2,enemy3_blowup_3,enemy3_blowup_4];
+            enemy.animationRepeatCount=1;
+            enemy.animationDuration=0.5;
+            enemy.center=self.center;
+            self.addSubview(enemy);
+            
         }
     }
     
-    func blowUp(){
-        enemy.startAnimating();
-    }
+    
     
     func getImageRef(rect:CGRect!)->UIImage{
         var imgRef=CGImageCreateWithImageInRect(UIImage(named:"gameArts").CGImage , rect);
