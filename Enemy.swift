@@ -9,9 +9,7 @@
 import UIKit
 var enemy:UIImageView!;
 
-func blowUp(){
-    enemy.startAnimating();
-}
+
 
 
 enum EnemyType: Int {
@@ -82,6 +80,21 @@ class Enemy: UIView {
         }
     }
     
+    func blowUp() -> Void{
+        UIView.beginAnimations(nil, context: nil);
+        UIView.setAnimationDuration(0.5);
+        enemy.alpha=0;
+        UIView.setAnimationDidStopSelector("animastop()");
+        UIView.commitAnimations();
+        enemy.startAnimating();
+    }
+    func animastop(){
+        enemy.removeFromSuperview();
+    }
+    
+    func isAnima() ->Bool{
+        return enemy.isAnimating();
+    }
     
     
     func getImageRef(rect:CGRect!)->UIImage{

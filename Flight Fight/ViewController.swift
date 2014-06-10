@@ -20,7 +20,8 @@ var avplayer:AVAudioPlayer!;
 var player:AVAudioPlayer!;
 var enemyTimer:NSTimer!;
 var timeLine=0;
-
+var bulletArray:NSMutableArray!;
+var enemyArray:NSMutableArray!;
 
 
 class ViewController: UIViewController {
@@ -86,7 +87,8 @@ class ViewController: UIViewController {
             }, completion: nil);
         
         
-       
+        bulletArray=NSMutableArray(capacity: 10);
+        enemyArray=NSMutableArray(capacity: 10);
     }
     
     
@@ -122,23 +124,70 @@ class ViewController: UIViewController {
         enemyTimer.fire();
         
         timeLine=0;
+        
+        var updateTimer=NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "update", userInfo: nil, repeats: true);
+        updateTimer.fire();
     }
+    func update(){
+//        var bullet:Bullet;
+        for var i=0 ;i<bulletArray.count ;++i{
+            
+            var bullet=bulletArray.objectAtIndex(i) as Bullet;
+            
+            var bulletRect : AnyObject!  = bullet.layer.presentationLayer();
+
+            var bulletLayer : CALayer! = bulletRect as CALayer;
+            
+            for var m=0 ;m<enemyArray.count ;++m{
+                
+                var enemy=enemyArray.objectAtIndex(m) as Enemy;
+                
+                var enemyRect : AnyObject! = enemy.layer.presentationLayer();
+                
+                var enemyLayer : CALayer! = enemyRect as CALayer;
+                
+                if CGRectIntersectsRect(enemyLayer.frame, bulletLayer.frame){
+                    enemy.blowUp();
+                    
+                    
+                    enemyArray.removeObject(enemy);
+                    bulletArray.removeObject(bullet);
+                    bullet.removeFromSuperview();
+                    
+                }
+                if  enemyLayer.position.y > 580 {
+                    enemyArray.removeObject(enemy);
+                    enemy.removeFromSuperview();
+                    
+                }
+            }
+            if  bulletLayer.position.y < 0 {
+                bulletArray.removeObject(bullet);
+                bullet.removeFromSuperview();
+            }
+        }
+
+        
+    }
+    
     func enemy(){
         timeLine++;
         var y = arc4random() % 4 + 1;
-        
         if timeLine%2==0{
             
-            var enemy1=Enemy(enemyType: EnemyType.enemy_1);
-            enemy1.center=CGPointMake(60*CGFloat(y), -30);
-            self.view.addSubview(enemy1);
-            self.enemyFly(enemy1, type: EnemyType.enemy_1);
+            var enemy=Enemy(enemyType: EnemyType.enemy_1);
+            enemy.center=CGPointMake(60*CGFloat(y), -30);
+            self.view.addSubview(enemy);
+            self.enemyFly(enemy, type: EnemyType.enemy_1);
+            enemyArray.addObject(enemy);
+
         }else if timeLine%3==0{
             
-            var enemy2=Enemy(enemyType: EnemyType.enemy_2);
-            enemy2.center=CGPointMake(60*CGFloat(y), -70);
-            self.view.addSubview(enemy2);
-            self.enemyFly(enemy2, type: EnemyType.enemy_2);
+            var enemy1=Enemy(enemyType: EnemyType.enemy_2);
+            enemy1.center=CGPointMake(60*CGFloat(y), -70);
+            self.view.addSubview(enemy1);
+            self.enemyFly(enemy1, type: EnemyType.enemy_2);
+            enemyArray.addObject(enemy1);
             
         }
         if timeLine%6==0{
@@ -146,6 +195,8 @@ class ViewController: UIViewController {
             enemy3.center=CGPointMake(60*CGFloat(y), -70);
             self.view.addSubview(enemy3);
             self.enemyFly(enemy3, type: EnemyType.enemy_3);
+            enemyArray.addObject(enemy3);
+            return;
         }
         
     }
@@ -191,7 +242,7 @@ class ViewController: UIViewController {
             
             var p=sender.locationInView(self.view!);
             flight.center=p;
-            println("\(p)");
+//            println("\(p)");
             
         }else if sender.state==UIGestureRecognizerState.Ended{
             //endfire
@@ -215,12 +266,15 @@ class ViewController: UIViewController {
         var bullet=Bullet(frame:CGRectZero);
         bullet.center=CGPointMake(flight.center.x, flight.center.y-45);
         self.view.addSubview(bullet);
+        bulletArray.addObject(bullet);
         UIView.animateWithDuration(1, animations: {
             
             UIView.setAnimationCurve(UIViewAnimationCurve.Linear);
             bullet.center=CGPointMake(bullet.center.x, -10);
             }, completion:  {(finished:Bool) in
                 bullet.removeFromSuperview();
+                println("bullet\(bulletArray.count),enemy\(enemyArray.count)");
+                
             });
     }
     
