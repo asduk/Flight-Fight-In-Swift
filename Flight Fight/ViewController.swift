@@ -3,7 +3,7 @@
 //  Flight Fight
 //
 //  Created by asduk on 14-6-5.
-//  Copyright (c) 2014年 asduk. All rights reserved.
+//  Copyright (c) 2014 asduk. All rights reserved.
 //
 
 import UIKit
@@ -24,7 +24,9 @@ var bulletArray:NSMutableArray!;
 var enemyArray:NSMutableArray!;
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController ,enemyDelegate{
+    
+    
     
     override func viewDidLoad() {
         
@@ -149,7 +151,6 @@ class ViewController: UIViewController {
                 if CGRectIntersectsRect(enemyLayer.frame, bulletLayer.frame){
                     enemy.blowUp();
                     
-                    
                     enemyArray.removeObject(enemy);
                     bulletArray.removeObject(bullet);
                     bullet.removeFromSuperview();
@@ -166,7 +167,7 @@ class ViewController: UIViewController {
                 bullet.removeFromSuperview();
             }
         }
-
+        println("bullet\(bulletArray.count),enemy\(enemyArray.count)");
         
     }
     
@@ -177,13 +178,16 @@ class ViewController: UIViewController {
             
             var enemy=Enemy(enemyType: EnemyType.enemy_1);
             enemy.center=CGPointMake(60*CGFloat(y), -30);
+            enemy.delegate=self;
             self.view.addSubview(enemy);
             self.enemyFly(enemy, type: EnemyType.enemy_1);
             enemyArray.addObject(enemy);
 
-        }else if timeLine%3==0{
+        }
+        if timeLine%3==0{
             
             var enemy1=Enemy(enemyType: EnemyType.enemy_2);
+            enemy1.delegate=self;
             enemy1.center=CGPointMake(60*CGFloat(y), -70);
             self.view.addSubview(enemy1);
             self.enemyFly(enemy1, type: EnemyType.enemy_2);
@@ -192,13 +196,16 @@ class ViewController: UIViewController {
         }
         if timeLine%6==0{
             var enemy3=Enemy(enemyType: EnemyType.enemy_3);
+            enemy3.delegate=self;
             enemy3.center=CGPointMake(60*CGFloat(y), -70);
             self.view.addSubview(enemy3);
             self.enemyFly(enemy3, type: EnemyType.enemy_3);
             enemyArray.addObject(enemy3);
-            return;
         }
         
+    }
+    func enemyDidStop() {
+        println("123");
     }
     
     func enemyFly(enemy:Enemy,type:EnemyType){
@@ -272,8 +279,7 @@ class ViewController: UIViewController {
             UIView.setAnimationCurve(UIViewAnimationCurve.Linear);
             bullet.center=CGPointMake(bullet.center.x, -10);
             }, completion:  {(finished:Bool) in
-                bullet.removeFromSuperview();
-                println("bullet\(bulletArray.count),enemy\(enemyArray.count)");
+                
                 
             });
     }

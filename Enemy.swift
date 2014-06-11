@@ -3,12 +3,15 @@
 //  Flight Fight
 //
 //  Created by asduk on 14-6-8.
-//  Copyright (c) 2014年 asduk. All rights reserved.
+//  Copyright (c) 2014 asduk. All rights reserved.
 //
 
 import UIKit
 var enemy:UIImageView!;
 
+protocol enemyDelegate{
+    func enemyDidStop();
+}
 
 
 
@@ -29,7 +32,12 @@ enum EnemyType: Int {
     }
 }
 
+
+
 class Enemy: UIView {
+    
+    var delegate:enemyDelegate?;
+    
     init(enemyType:EnemyType){
         super.init(frame:CGRect())
         if enemyType==EnemyType.enemy_1{
@@ -89,7 +97,7 @@ class Enemy: UIView {
         enemy.startAnimating();
     }
     func animastop(){
-        enemy.removeFromSuperview();
+        self.delegate?.enemyDidStop();
     }
     
     func isAnima() ->Bool{
